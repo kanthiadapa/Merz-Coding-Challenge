@@ -1,0 +1,13 @@
+public class ShippingService {
+
+@AuraEnabled
+public static string getShippingStatus(string trackingNumber){
+        HttpRequest req = new HttpRequest();
+        req.setEndpoint( 'https://merzcommunities--mel.sandbox.my.salesforcesites.com/services/apexrest/mockShipmentStatus?trackingNumber=' + trackingNumber);
+        req.setHeader('api_key', '{!$Credential.Password}');
+        req.setMethod('GET');
+        Http http = new Http();
+        HTTPResponse res = http.send(req);
+        return res.getbody();       
+}
+}

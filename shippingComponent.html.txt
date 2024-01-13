@@ -1,0 +1,11 @@
+<template>
+
+    <div>
+        <lightning-layout-item padding="around-small">
+            <button class="slds-button slds-button_brand" onclick = {handleClick}>Get Shipment Status</button>
+        </lightning-layout-item>
+        <div>
+            Shipping Status: {shippingStatus}
+        </div>
+    </div>
+</template>
